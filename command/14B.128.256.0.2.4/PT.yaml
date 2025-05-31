@@ -1,0 +1,49 @@
+### 需修改的参数
+### model
+model_name_or_path: /data/1JY/98model/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B
+### output
+output_dir: /data/1JY/6.DeepseekFT/saves/Qwen2.5-Math-14B/lora.PT/train.128.256.0.2.4
+### lora
+lora_rank: 128
+lora_alpha: 256
+lora_dropout: 0.2
+### train
+num_train_epochs: 4.0
+### deepspeed
+deepspeed: cache/ds_z2_config.json
+### 加速
+flash_attn: fa2
+### 量化部署
+quantization_bit: 4
+quantization_method: bitsandbytes
+### 基于之前的chenkpoint继续训练
+resume_from_checkpoint: /data/1JY/6.DeepseekFT/saves/Qwen2.5-Math-14B/lora.PT/train.128.256.0.2.2/checkpoint-1146
+
+### method
+stage: pt
+do_train: true
+finetuning_type: lora
+lora_target: all
+
+### dataset
+dataset: PT
+template: default
+cutoff_len: 2048
+max_samples: 1000000000000000
+#overwrite_cache: true
+preprocessing_num_workers: 8
+
+### output
+logging_steps: 10
+save_steps: 500
+plot_loss: true
+#overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 8
+learning_rate: 5.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000

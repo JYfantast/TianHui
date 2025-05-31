@@ -1,0 +1,47 @@
+### 需修改的参数
+### model
+model_name_or_path: /data/1JY/6.DeepseekFT/saves/Qwen2.5-Math-14B/merge.PT/train.128.256.0.2.4
+### output
+output_dir: /data/1JY/6.DeepseekFT/saves/Qwen2.5-Math-14B/lora.SFT/train.128.256.0.2.4
+### lora
+lora_rank: 128
+lora_alpha: 256
+lora_dropout: 0.2
+### train
+num_train_epochs: 4.0
+### deepspeed
+deepspeed: cache/ds_z2_config.json
+### 加速
+flash_attn: fa2
+### 量化部署
+quantization_bit: 4
+quantization_method: bitsandbytes
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+
+### dataset
+dataset: QA
+template: default
+cutoff_len: 2048
+max_samples: 1000000000000000
+#overwrite_cache: true
+preprocessing_num_workers: 8
+
+### output
+logging_steps: 10
+save_steps: 1000
+plot_loss: true
+#overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 8
+learning_rate: 5.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000

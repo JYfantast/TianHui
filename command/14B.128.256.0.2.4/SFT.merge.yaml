@@ -1,0 +1,16 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+### 需修改的参数
+### model
+model_name_or_path: /data/1JY/6.DeepseekFT/saves/Qwen2.5-Math-14B/merge.PT/train.128.256.0.2.4
+adapter_name_or_path: /data/1JY/6.DeepseekFT/saves/Qwen2.5-Math-14B/lora.SFT/train.128.256.0.2.4
+### export
+export_dir: /data/1JY/6.DeepseekFT/saves/Qwen2.5-Math-14B/merge.SFT/train.128.256.0.2.4
+
+### model
+template: default
+finetuning_type: lora
+
+### export
+export_size: 2
+export_device: auto
+export_legacy_format: false
