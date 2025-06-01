@@ -31,5 +31,5 @@ Next, perform the evaluation by running the corresponding downstream task comman
 ## Acknowledgments
 
 1. We are very grateful to Sichuan Huixin Intelligent Computing Technology Co., Ltd. for providing the equipment and technical support (8 NVIDIA A100 40G GPUs) for this research.
-2. We sincerely appreciate the open-source projects LLaMA-Factory (https://github.com/hiyouga/LLaMA-Factory), TCMChat (https://github.com/ZJUFanLab/TCMChat), and Baichuan2 (https://github.com/baichuan-inc/Baichuan2) for their technical support, which was instrumental in the successful completion of this research.
+2. We sincerely appreciate the open-source projects LLaMA-Factory (https://github.com/hiyouga/LLaMA-Factory), TCMChat (https://github.com/ZJUFanLab/TCMChat), DeepSeek-R1 (https://github.com/deepseek-ai/DeepSeek-R1), and Baichuan2 (https://github.com/baichuan-inc/Baichuan2) for their technical support, which was instrumental in the successful completion of this research.
 
